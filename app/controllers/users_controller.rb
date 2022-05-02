@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
     def update
         if current_user.update_attributes(user_params)
-            render :show
+            render json: :show
         else
             render json: { errors: current_user.errors }, status: :unprocessable_entity
         end
